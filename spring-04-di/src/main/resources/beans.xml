@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.hx76.pojo.Address">
+        <property name="addresss" value="beijing"/>
+    </bean>
+    <bean id="student" class="com.hx76.pojo.Student">
+        <!--普通注入-->
+        <property name="name" value="哈哈"/>
+        <!--bean注入-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>第一本书</value>
+                <value>第二本书</value>
+                <value>第三本书</value>
+                <value>第四本书</value>
+            </array>
+        </property>
+        <!--list集合注入-->
+        <property name="hobbies">
+            <list>
+                <value>听歌</value>
+                <value>跳舞</value>
+                <value>敲代码</value>
+                <value>打篮球</value>
+            </list>
+        </property>
+        <!--map集合注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="11111111111"/>
+                <entry key="银行卡" value="22222222222"/>
+            </map>
+        </property>
+        <!--set集合注入-->
+        <property name="games">
+            <set>
+                <value>warframe</value>
+                <value>crossfire</value>
+                <value>QQspeed</value>
+            </set>
+        </property>
+        <!--空值注入-->
+        <!--为空-->
+<!--        <property name="wife" value=""/>-->
+        <!--为Null-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--Properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">20171106666</prop>
+                <prop key="性别">boy</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

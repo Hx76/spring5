@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    &lt;!&ndash;通过无参构造器配置&ndash;&gt;-->
+<!--    <bean id="user" class="com.hx76.pojo.User">-->
+<!--        <property name="name" value="张三"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;有参构造器&ndash;&gt;-->
+<!--    &lt;!&ndash;通过下标赋值&ndash;&gt;-->
+<!--    <bean id="user" class="com.hx76.pojo.User">-->
+<!--        <constructor-arg index="0" value="李四"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;通过参数类型赋值，如果俩参数都是String从上到下顺序赋值&ndash;&gt;-->
+<!--    <bean id="user" class="com.hx76.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="王五"/>-->
+<!--    </bean>-->
+
+    <!--通过参数名称赋值-->
+    <bean id="user" class="com.hx76.pojo.User">
+        <constructor-arg name="name" value="赵六"/>
+    </bean>
+
+    <bean id="userT" class="com.hx76.pojo.UserT">
+
+    </bean>
+
+    <import resource="bean1.xml"/>
+    <import resource="bean2.xml"/>
+
+    <alias name="user" alias="admin"/>
+</beans>
